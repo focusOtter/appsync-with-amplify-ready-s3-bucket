@@ -1,0 +1,25 @@
+type Query {
+	getProduct(id: ID!): Product
+}
+
+type Mutation {
+	createProduct(input: ProductInput!): Product
+}
+
+type Product {
+	id: ID!
+	createdAt: AWSDateTime!
+	updatedAt: AWSDateTime!
+	owner: String!
+	name: String!
+	description: String
+	price: Int
+	image: String!
+}
+
+input ProductInput {
+	id: ID
+	name: String!
+	price: Int
+	image: String!
+}
